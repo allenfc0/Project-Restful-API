@@ -1,4 +1,4 @@
-package com.example.ProjectRestfulAPI.Controllers;
+package com.example.ProjectRestfulAPI.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import com.example.ProjectRestfulAPI.models.Email;
 import com.example.ProjectRestfulAPI.services.EmailService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:5000")
+@CrossOrigin(origins="*")
 public class HomeController {
 	
 	@Autowired
@@ -24,11 +24,11 @@ public class HomeController {
 		return "Welcome to this Home API";
 	}
 	
-	/*
-	 * @PostMapping(value="/api/send-email",
-	 * consumes="MediaType.APPLICATION_JSON_VALUE") public ResponseEntity<Void>
-	 * sendEmail(@RequestBody Email email) { int res;
-	 * 
-	 * //return ResponseEntity.created("").build(); }
-	 */
+	
+	  @PostMapping(value="/api/send-email") 
+	  public String sendEmail(@RequestBody Email email) { 
+		  System.out.println(email);
+		  return "success";
+		  //return ResponseEntity.created("").build(); }
+	  }
 }

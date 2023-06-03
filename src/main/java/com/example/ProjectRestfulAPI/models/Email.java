@@ -2,16 +2,14 @@ package com.example.ProjectRestfulAPI.models;
 
 
 public class Email {
+	
 	private String from;
 	private String to;
 	private String title;
 	private String body;
 	
 	public Email() {
-		this.from = "";
-		this.to = "";
-		this.title = "";
-		this.body = "";
+		
 	}
 	
 	public Email(String from, String to, String title, String body) {

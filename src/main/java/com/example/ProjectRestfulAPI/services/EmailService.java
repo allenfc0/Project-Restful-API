@@ -1,13 +1,20 @@
 package com.example.ProjectRestfulAPI.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.ProjectRestfulAPI.models.Email;
+import com.example.ProjectRestfulAPI.repositories.EmailRepository;
 
 @Service
 public class EmailService {
 	
-	// I will not be using a DAO - Data Access Object because there is no database = involved
+	@Autowired
+	private EmailRepository repo;
+	
+	public Email saveEmail(Email email) {
+		return repo.save(email);
+	}
 	
 	public static String format(Email email) {
 		
