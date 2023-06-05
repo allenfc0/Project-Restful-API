@@ -37,7 +37,7 @@ public class EmailService {
 			
 			return true;
 		} catch(Exception e) {
-			System.out.println(e.getStackTrace());
+			System.out.println(e.getCause());
 		}
 		return false;
 	}

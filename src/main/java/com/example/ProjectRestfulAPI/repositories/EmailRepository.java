@@ -16,7 +16,7 @@ public class EmailRepository {
 		Email email = new Email();
 		email.setFrom(e.getFrom());
 		email.setTo(e.getTo());
-		email.setTitle(e.getTitle());
+		email.setSubject(e.getSubject());
 		email.setBody(e.getBody());
 		localDatabase.add(email);
 		
