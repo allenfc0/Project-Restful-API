@@ -26,9 +26,10 @@ public class HomeController {
 	
 	
 	  @PostMapping(value="/api/send-email") 
-	  public String sendEmail(@RequestBody Email email) { 
-		  System.out.println(email);
-		  return "success";
-		  //return ResponseEntity.created("").build(); }
+	  public ResponseEntity<Email> sendEmail(@RequestBody Email email) { 
+		  boolean sent = emailService.sendEmail(email);
+		  
+		  if(!sent) return new ResponseEntity<Email>(email, HttpStatus.BAD_REQUEST);
+		  return new ResponseEntity<Email>(email, HttpStatus.ACCEPTED);
 	  }
 }

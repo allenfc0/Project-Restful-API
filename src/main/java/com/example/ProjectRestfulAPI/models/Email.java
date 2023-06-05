@@ -3,19 +3,20 @@ package com.example.ProjectRestfulAPI.models;
 
 public class Email {
 	
+	
 	private String from;
 	private String to;
-	private String title;
+	private String subject;
 	private String body;
 	
 	public Email() {
 		
 	}
 	
-	public Email(String from, String to, String title, String body) {
+	public Email(String from, String to, String subject, String body) {
 		this.from = from;
 		this.to = to;
-		this.title = title;
+		this.subject = subject;
 		this.body = body;
 	}
 
@@ -35,12 +36,12 @@ public class Email {
 		this.to = to;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getSubject() {
+		return subject;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 	public String getBody() {
@@ -53,7 +54,7 @@ public class Email {
 
 	@Override
 	public String toString() {
-		return "Email [from=" + from + ", to=" + to + ", title=" + title + ", body=" + body + "]";
+		return "Email [from=" + from + ", to=" + to + ", subject=" + subject + ", body=" + body + "]";
 	}
 	
 	
