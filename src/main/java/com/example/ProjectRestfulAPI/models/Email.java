@@ -3,7 +3,7 @@ package com.example.ProjectRestfulAPI.models;
 
 public class Email {
 	
-	
+	private String fromName;
 	private String from;
 	private String to;
 	private String subject;
@@ -13,11 +13,22 @@ public class Email {
 		
 	}
 	
-	public Email(String from, String to, String subject, String body) {
+	public Email(String fromName, String from, String to, String subject, String body) {
+		this.fromName = fromName;
 		this.from = from;
 		this.to = to;
 		this.subject = subject;
 		this.body = body;
+	}
+	
+	
+	
+	public String getFromName() {
+		return fromName;
+	}
+
+	public void setFromName(String fromName) {
+		this.fromName = fromName;
 	}
 
 	public String getFrom() {

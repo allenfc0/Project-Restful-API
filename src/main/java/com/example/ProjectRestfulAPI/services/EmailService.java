@@ -27,11 +27,13 @@ public class EmailService {
 		try {
 			MimeMessageHelper helper = new MimeMessageHelper(message, 
 					MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
+			email.setTo("allentestemail536@gmail.com");
 			
+			// Can't set from 
+			//helper.setFrom(email.getFrom());
 			helper.setTo(email.getTo());
-			helper.setText(email.getBody());
 			helper.setSubject(email.getSubject());
-			helper.setFrom(email.getFrom());
+			helper.setText(String.format("Hello Allen,\nMy name is %s.\n%s\nSent From: %s", email.getFromName(), email.getBody(), email.getFrom()));
 			
 			sender.send(message);
 			
